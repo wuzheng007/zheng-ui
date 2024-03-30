@@ -1,0 +1,16 @@
+.zheng-icon {
+  --zheng-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--zheng-icon-color);
+  font-size: inherit;
+}
+
+@each $value in primary, success, warning, danger, info {
+  .zheng-icon-#{$value} {
+    --zheng-icon-color: var(--zheng-color-#{$value});
+  }
+}
