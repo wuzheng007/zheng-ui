@@ -12,7 +12,6 @@ $types: (
 
 // 选择文档的根元素 (HTML 中的 <html>) 定义一些全局的css变量
 :root {
-
   // 主体色
   @each $type, $value in $types {
     --zheng-color-#{$type}: #{$value}; // 生成主题色变量
@@ -49,7 +48,6 @@ $types: (
   --zheng-bg-color-page: #f2f3f5;
   --zheng-bg-color-overlay: #ffffff;
 
-
   // border(边框)相关
   --zheng-border-width: 1px;
   --zheng-border-style: solid;
@@ -73,4 +71,10 @@ $types: (
   --zheng-disabled-bg-color: var(--zheng-fill-color-light);
   --zheng-disabled-text-color: var(--zheng-text-color-placeholder);
   --zheng-disabled-border-color: var(--zheng-border-color-light);
+
+  // box-shadow相关
+  --zheng-box-shadow-base: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08);
+  --zheng-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, 0.12);
+  --zheng-box-shadow-dark: 0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px rgba(0, 0, 0, 0.12),
+    0px 8px 16px -8px rgba(0, 0, 0, 0.16);
 }

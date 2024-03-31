@@ -12,7 +12,7 @@
 import { ref } from 'vue'
 import ZhengIcon from '../Icon/index.vue'
 defineOptions({
-  name: 'ZhengBUtton'
+  name: 'ZhengButton'
 })
 const props = defineProps({
   // 类型
