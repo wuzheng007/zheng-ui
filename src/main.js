@@ -20,10 +20,12 @@ library.add(fas)
 
 
 import Icon from '@/components/Icon/index.vue'
+import Button from '@/components/Button/index.vue'
 
 const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.component('ZhengIcon', Icon)
+app.component('ZhengButton', Button)
 
 app.use(router)
 

@@ -1,0 +1,130 @@
+// 定义一些button相关的样式变量
+.zheng-button {
+  --zheng-button-text-color: var(--zheng-text-color-regular);
+  --zheng-button-bg-color: var(--zheng-fill-color);
+  --zheng-button-border-color: var(--zheng-border-color);
+  --zheng-button-border: var(--zheng-border);
+
+  /* 设置按钮大小时用到的相关变量=====》开始 */
+  --zheng-button-padding: 12px 20px;
+  --zheng-button-padding--medium: 10px 20px;
+  --zheng-button-padding--small: 9px 15px;
+  --zheng-button-padding--mini: 7px 15px;
+
+  --zheng-button-font-size: var(--zheng-font-size-base);
+  --zheng-button-font-size--medium: var(--zheng-font-size-base);
+  --zheng-button-font-size--small: var(--zheng-font-size-extra-small);
+  --zheng-button-font-size--mini: var(--zheng-font-size-extra-small);
+
+  --zheng-button-border-radius: var(--zheng-border-radius-base);
+  --zheng-button-border-radius--medium: var(--zheng-border-radius-base);
+  --zheng-button-border-radius--small: var(--zheng-border-radius-small);
+  --zheng-button-border-radius--mini: var(--zheng-border-radius-small);
+  /* 设置按钮大小时用到的相关变量=====》结束 */
+
+  /* hover、active、focus */
+  --zheng-button-text-color--hover: var(--zheng-color-primary);
+  --zheng-button-bg-color--hover: var(--zheng-color-primary-light-1);
+  --zheng-button-border-color--hover: var(--zheng-color-primary-light-7);
+  // 禁用
+  --zheng-button-text-color--disabled: var(--zheng-disabled-text-color);
+  --zheng-button-bg-color--disabled: var(--zheng-fill-color-light);
+  --zheng-button-border-color--disabled: var(--zheng-border-color-light);
+}
+
+.zheng-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  // height: 40px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: 500;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  color: var(--zheng-button-text-color);
+  font-size: var(--zheng-button-font-size);
+  background-color: var(--zheng-button-bg-color);
+  border: var(--zheng-button-border);
+  border-color: var(--zheng-button-border-color);
+  border-radius: var(--zheng-button-border-radius);
+  padding: var(--zheng-button-padding);
+  // hover、激活、聚焦
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--zheng-button-text-color--hover);
+    background-color: var(--zheng-button-bg-color--hover);
+    border-color: var(--zheng-button-border-color--hover);
+  }
+  // 禁用和加载中的样式
+  &:disabled,
+  &.is-loading {
+    color: var(--zheng-button-text-color--disabled);
+    background-color: var(--zheng-button-bg-color--disabled);
+    border-color: var(--zheng-button-border-color--disabled);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+  &.is-loading {
+    cursor: auto;
+  }
+  @each $val in primary, success, info, warning, danger {
+    // type-类型
+    &.zheng-button--#{$val} {
+      --zheng-button-text-color: #fff;
+      --zheng-button-text-color--hover: #fff;
+      --zheng-button-bg-color: var(--zheng-color-#{$val});
+      --zheng-button-bg-color--hover: var(--zheng-color-#{$val}-light-8);
+      --zheng-button-border-color--hover: transparent;
+      // plain-朴素
+      &.is-plain {
+        --zheng-button-text-color: var(--zheng-color-#{$val});
+        --zheng-button-bg-color: var(--zheng-color-#{$val}-light-1);
+        --zheng-button-bg-color--hover: var(--zheng-color-#{$val});
+        &:disabled {
+          --zheng-button-text-color--disabled: var(--zheng-color-#{$val}-light-7);
+          --zheng-button-bg-color--disabled: var(--zheng-color-#{$val}-light-1);
+        }
+      }
+      &:disabled,
+      &.is-loading {
+        --zheng-button-text-color--disabled: #fff;
+        --zheng-button-bg-color--disabled: var(--zheng-color-#{$val}-light-5);
+      }
+    }
+  }
+  // 圆角
+  &.is-round {
+    border-radius: var(--zheng-border-radius-round);
+  }
+  // 圆形
+  &.is-circle {
+    padding: 12px;
+    border-radius: 50%;
+  }
+
+  @each $val in medium, small, mini {
+    &.zheng-button--#{$val} {
+      --zheng-button-padding: var(--zheng-button-padding--#{$val});
+      --zheng-button-font-size: var(--zheng-button-font-size--#{$val});
+      --zheng-button-border-radius: var(--zheng-button-border-radius--#{$val});
+    }
+  }
+
+  .zheng-icon ~ span {
+    margin-left: 5px;
+  }
+}
+
+button + button {
+  margin-left: 10px;
+}

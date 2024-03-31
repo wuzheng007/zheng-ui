@@ -91,5 +91,6 @@ body {
 .row {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   margin: 20px auto 30px;
 }
