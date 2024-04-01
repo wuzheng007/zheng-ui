@@ -1,5 +1,5 @@
 <template>
-  <i class="zheng-icon" :class="{ [`zheng-icon-${type}`]: type }">
+  <i class="zheng-icon" :class="{ [`zheng-icon-${type}`]: type }" @click="$emit('click')">
     <font-awesome-icon v-bind="$attrs" />
   </i>
 </template>
@@ -17,6 +17,8 @@ defineProps({
     }
   }
 })
+
+defineEmits(['click'])
 </script>
 
 <style lang="scss" scoped></style>
