@@ -22,12 +22,14 @@ library.add(fas)
 import Icon from '@/components/Icon/index.vue'
 import Button from '@/components/Button/index.vue'
 import Card from '@/components/Card/index.vue'
+import Dialog from '@/components/Dialog/index.vue'
 
 const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.component('ZhengIcon', Icon)
 app.component('ZhengButton', Button)
 app.component('ZhengCard', Card)
+app.component('ZhengDialog', Dialog)
 
 app.use(router)
 
