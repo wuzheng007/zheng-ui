@@ -6,7 +6,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-/* import the fontawesome core */
+/* 导入 fontawesome 核心包 */
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 /* 导入 font awesome 图标组件 */
