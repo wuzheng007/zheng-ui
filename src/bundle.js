@@ -28,7 +28,7 @@ const components = [Icon, Button, Card, Dialog]
 function install(app) {
   app.component('font-awesome-icon', FontAwesomeIcon)
   components.forEach(component => {
-    app.use(component.name, component)
+    app.component(component.name, component)
   })
 }
 
@@ -37,6 +37,7 @@ export default install
 
 // 按需导出
 export {
+  install,
   Icon,
   Button,
   Card,
